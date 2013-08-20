@@ -163,7 +163,7 @@ static NSString *typeMatch(NSString *type, NSString *pattern){
     
     // Structure
     if ((matchedType = typeMatch(typeString, @"^\\{([A-Za-z0-9_]+)\\="))) {
-        return [NSString stringWithFormat:@"{%@: %p}",matchedType,valueRef];
+        return [NSString stringWithFormat:@"{%@}",matchedType];
     }
     
     // Structure reference

@@ -56,12 +56,7 @@
     AssertEquals(ATString(transform), NSStringFromCGAffineTransform(transform));
     
     CGSize size = CGSizeMake(150, 150);
-    AssertEquals(ATString(size), NSStringFromCGSize(size));
-    
-    CGContextRef ctx = CGBitmapContextCreate(NULL, 10, 10, 8, 4*10,
-                                             CGColorSpaceCreateDeviceRGB(),
-                                             kCGImageAlphaPremultipliedFirst);
-    AssertEquals(ATString(ctx), SF(@"{CGContext: %p}",ctx));
+    AssertEquals(ATString(size), NSStringFromCGSize(size));    
 }
 
 -(void)testPrimitives{
@@ -95,6 +90,20 @@
 -(void)testStrings{
     AssertEquals(ATString((const char *)"ABC"), @"ABC");
     AssertEquals(ATString("QWERTY"), @"QWERTY");
+}
+
+-(void)testStructures{
+    struct MyStruct {
+        CGFloat f;
+    };
+    
+    typedef struct MyStruct *MyStructRef;
+    
+    struct MyStruct m = {M_PI};
+    MyStructRef mRef = &m;
+    
+    AssertEquals(ATString(m), @"{MyStruct}");
+    AssertEquals(ATString(mRef), SF(@"{MyStruct: %p}",mRef));
 }
 
 @end
