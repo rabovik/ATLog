@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ATStringWithFormat.h"
 
 @implementation AppDelegate
 
@@ -17,7 +18,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    
+    NSString *a = ATStringWithFormat(@"ABC");
+    NSLog(@"%@",a);
     
     return YES;
 }

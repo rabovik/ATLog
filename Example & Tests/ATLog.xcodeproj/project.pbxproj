@@ -53,6 +53,8 @@
 		1A31C7FD17C3BC5900D0BA5F /* ATString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATString.h; path = ../ATLog/ATString/ATString.h; sourceTree = "<group>"; };
 		1A31C7FE17C3BC5900D0BA5F /* ATString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATString.m; path = ../ATLog/ATString/ATString.m; sourceTree = "<group>"; };
 		1A31C80217C3C16300D0BA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		1A31C81817C4D2A500D0BA5F /* ATStringWithFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATStringWithFormat.h; path = ../ATLog/ATStringWithFormat/ATStringWithFormat.h; sourceTree = "<group>"; };
+		1A31C81A17C4D30F00D0BA5F /* at_preprocessor_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = at_preprocessor_map.h; path = ../ATLog/ATStringWithFormat/at_preprocessor_map.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		1A31C7FB17C3BC0200D0BA5F /* ATLog */ = {
 			isa = PBXGroup;
 			children = (
+				1A31C81917C4D2A900D0BA5F /* ATStringWithFormat */,
 				1A31C7FC17C3BC0E00D0BA5F /* ATString */,
 			);
 			name = ATLog;
@@ -191,6 +194,15 @@
 				1A31C7FE17C3BC5900D0BA5F /* ATString.m */,
 			);
 			name = ATString;
+			sourceTree = "<group>";
+		};
+		1A31C81917C4D2A900D0BA5F /* ATStringWithFormat */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C81A17C4D30F00D0BA5F /* at_preprocessor_map.h */,
+				1A31C81817C4D2A500D0BA5F /* ATStringWithFormat.h */,
+			);
+			name = ATStringWithFormat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
