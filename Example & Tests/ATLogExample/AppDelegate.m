@@ -56,6 +56,9 @@
                self.window.alignmentRectInsets,
                self.window.keyWindow);
     
+    // May be used without arguments
+    ATLog();
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
