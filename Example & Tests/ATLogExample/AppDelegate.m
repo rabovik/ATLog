@@ -47,6 +47,14 @@
     
     NSLog(@"M_PI = %f;", M_PI);
     ATLog(@"M_PI = %@;", M_PI);
+    
+    ATLogItems(@"Window properties:",
+               self.window.rootViewController,
+               self.window.frame,
+               self.window.center,
+               self.window.transform,
+               self.window.alignmentRectInsets,
+               self.window.keyWindow);
         
     return YES;
 }
