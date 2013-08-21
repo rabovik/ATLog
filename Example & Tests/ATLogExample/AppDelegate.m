@@ -9,22 +9,19 @@
 #import "AppDelegate.h"
 #import "ATStringWithFormat.h"
 #import "ATLog.h"
+#import "ATPrettyLog.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+- (void)logExample{
     
+    // Instead of NSLog:
     NSLog(@"\n RootViewController: %@ \
             \n Frame: %@ \
             \n Center: %@ \
             \n Transform: %@ \
             \n Alignment rect insects: %@ \
-            \n keyWindow: %d",
+            \n Is keyWindow: %d",
           self.window.rootViewController,
           NSStringFromCGRect(self.window.frame),
           NSStringFromCGPoint(self.window.center),
@@ -32,12 +29,14 @@
           NSStringFromUIEdgeInsets(self.window.alignmentRectInsets),
           self.window.keyWindow);
     
+    // We can use ATLog which is easier to use
+    // and produces better output:
     ATLog(@"\n RootViewController: %@ \
-          \n Frame: %@ \
-          \n Center: %@ \
-          \n Transform: %@ \
-          \n Alignment rect insects: %@ \
-          \n keyWindow: %@",
+            \n Frame: %@ \
+            \n Center: %@ \
+            \n Transform: %@ \
+            \n Alignment rect insects: %@ \
+            \n Is keyWindow: %@",
           self.window.rootViewController,
           self.window.frame,
           self.window.center,
@@ -45,9 +44,10 @@
           self.window.alignmentRectInsets,
           self.window.keyWindow);
     
-    NSLog(@"M_PI = %f;", M_PI);
-    ATLog(@"M_PI = %@;", M_PI);
+    // Common structs and primitives are automatically converted to strings:
+    ATLog(@"float: %@; int: %@; unsigned: %@.", 3.14f, 13, 169u);
     
+    // Another macro for easy logging objects, structs and primitives:
     ATLogItems(@"Window properties:",
                self.window.rootViewController,
                self.window.frame,
@@ -55,6 +55,17 @@
                self.window.transform,
                self.window.alignmentRectInsets,
                self.window.keyWindow);
+    
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+            
+    [self logExample];
         
     return YES;
 }

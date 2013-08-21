@@ -7,14 +7,15 @@
 //
 
 #import "ATStringWithFormat.h"
+#import "ATPrettyLog.h"
 
-#define ATLog(fmt...) NSLog(@"%@",ATStringWithFormat(fmt))
+#define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
 
 #define ATLogItems(items...) \
 { \
     id array[] = { _AT_MAP(_ATString_plus_comma, items) }; \
     int n = sizeof(array)/sizeof(id); \
     for(int i=0; i<n; ++i){ \
-        ATLog(@"{%@} = %@",i,array[i]); \
+        ATLog(@"%@) %@",i,array[i]); \
     } \
 }
