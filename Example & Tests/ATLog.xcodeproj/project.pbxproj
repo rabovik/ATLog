@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A31C7A617C3BA5600D0BA5F /* ATLogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATLogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A31C7A617C3BA5600D0BA5F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A31C7A917C3BA5600D0BA5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		1A31C7AB17C3BA5600D0BA5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1A31C7AD17C3BA5600D0BA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -40,7 +40,7 @@
 		1A31C7BB17C3BA5600D0BA5F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1A31C7BD17C3BA5600D0BA5F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1A31C7BF17C3BA5600D0BA5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1A31C7C917C3BA6F00D0BA5F /* ATLogIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATLogIOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A31C7C917C3BA6F00D0BA5F /* ATLogIOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ATLogIOSTests.octest; path = IOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A31C7CA17C3BA6F00D0BA5F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1A31C7D017C3BA6F00D0BA5F /* ATLogIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ATLogIOSTests-Info.plist"; sourceTree = "<group>"; };
 		1A31C7D217C3BA6F00D0BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 		1A31C80217C3C16300D0BA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		1A31C81817C4D2A500D0BA5F /* ATStringWithFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATStringWithFormat.h; path = ../ATLog/ATStringWithFormat/ATStringWithFormat.h; sourceTree = "<group>"; };
 		1A31C81A17C4D30F00D0BA5F /* at_preprocessor_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = at_preprocessor_map.h; path = ../ATLog/ATStringWithFormat/at_preprocessor_map.h; sourceTree = "<group>"; };
+		1A9425DA17C4DC8200A21012 /* ATLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATLog.h; path = ../ATLog/ATLog/ATLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +98,7 @@
 		1A31C7A717C3BA5600D0BA5F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A31C7A617C3BA5600D0BA5F /* ATLogExample.app */,
+				1A31C7A617C3BA5600D0BA5F /* Example.app */,
 				1A31C7C917C3BA6F00D0BA5F /* ATLogIOSTests.octest */,
 			);
 			name = Products;
@@ -181,6 +182,7 @@
 		1A31C7FB17C3BC0200D0BA5F /* ATLog */ = {
 			isa = PBXGroup;
 			children = (
+				1A9425D917C4DC6700A21012 /* ATLog */,
 				1A31C81917C4D2A900D0BA5F /* ATStringWithFormat */,
 				1A31C7FC17C3BC0E00D0BA5F /* ATString */,
 			);
@@ -205,6 +207,14 @@
 			name = ATStringWithFormat;
 			sourceTree = "<group>";
 		};
+		1A9425D917C4DC6700A21012 /* ATLog */ = {
+			isa = PBXGroup;
+			children = (
+				1A9425DA17C4DC8200A21012 /* ATLog.h */,
+			);
+			name = ATLog;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,7 +232,7 @@
 			);
 			name = Example;
 			productName = ATLogExample;
-			productReference = 1A31C7A617C3BA5600D0BA5F /* ATLogExample.app */;
+			productReference = 1A31C7A617C3BA5600D0BA5F /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1A31C7C817C3BA6F00D0BA5F /* IOSTests */ = {
@@ -525,6 +535,7 @@
 				1A31C7C217C3BA5600D0BA5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A31C7D817C3BA6F00D0BA5F /* Build configuration list for PBXNativeTarget "IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +544,7 @@
 				1A31C7DA17C3BA6F00D0BA5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
