@@ -8,6 +8,10 @@
 
 #import "ATString.h"
 
+#if !__has_feature(objc_arc)
+#error This code needs ARC. Use compiler option -fobjc-arc
+#endif
+
 static NSString *typeMatch(NSString *type, NSString *pattern){
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression
