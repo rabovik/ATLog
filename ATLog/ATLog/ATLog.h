@@ -15,13 +15,17 @@
 #   define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
 #endif
 
-#define ATConcatLog(items...) NSLog(@"%@",ATStringFromComponents(items))
+#define ATConcatLog(items...) \
+{ \
+    NSString *__atcl_str = ATStringFromComponents(items); \
+    ATLog(@"%@",__atcl_str); \
+}
 
 #define ATLogEach(items...) \
 { \
-    id array[] = { _AT_MAP(_ATString_plus_comma, items) }; \
-    int n = sizeof(array)/sizeof(id); \
-    for(int i=0; i<n; ++i){ \
-        ATLog(@"%@) %@",i,array[i]); \
+    id __atle_array[] = { _AT_MAP(_ATString_plus_comma, items) }; \
+    int __atle_n = sizeof(__atle_array)/sizeof(id); \
+    for(int i = 0; i < __atle_n; ++i){ \
+        ATLog(@"%@) %@",i,__atle_array[i]); \
     } \
 }
