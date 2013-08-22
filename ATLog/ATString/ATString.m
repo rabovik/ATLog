@@ -40,6 +40,10 @@ static NSString *typeMatch(NSString *type, NSString *pattern){
         
         if (nil == object) return @"(nil)";
         
+        if ([object isKindOfClass:[NSString class]]) {
+            return [object copy];
+        }
+        
         if ([object isKindOfClass:NSClassFromString(@"Protocol")]) {
             return NSStringFromProtocol(object);
         }
