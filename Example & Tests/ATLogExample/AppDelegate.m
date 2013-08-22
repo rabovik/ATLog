@@ -47,14 +47,15 @@
     // Common structs and primitives are automatically converted to strings:
     ATLog(@"float: %@; int: %@; unsigned: %@.", 3.14f, 13, 169u);
     
-    // Another macro for easy logging objects, structs and primitives:
-    ATLogItems(@"Window properties:",
-               self.window.rootViewController,
-               self.window.frame,
-               self.window.center,
-               self.window.transform,
-               self.window.alignmentRectInsets,
-               self.window.keyWindow);
+    // Another macro for easy logging objects, structs and primitives.
+    // Each argument is logged in a separate line:
+    ATLogEach(@"Window properties:",
+              self.window.rootViewController,
+              self.window.frame,
+              self.window.center,
+              self.window.transform,
+              self.window.alignmentRectInsets,
+              self.window.keyWindow);
     
     // May be used without arguments
     ATLog();

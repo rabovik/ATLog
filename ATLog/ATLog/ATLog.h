@@ -11,7 +11,7 @@
 
 #define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
 
-#define ATLogItems(items...) \
+#define ATLogEach(items...) \
 { \
     id array[] = { _AT_MAP(_ATString_plus_comma, items) }; \
     int n = sizeof(array)/sizeof(id); \
