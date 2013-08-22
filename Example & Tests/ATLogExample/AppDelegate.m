@@ -29,7 +29,7 @@
           NSStringFromUIEdgeInsets(self.window.alignmentRectInsets),
           self.window.keyWindow);
     
-    // We can use ATLog which is easier to use
+    // we can use ATLog which is easier to use
     // and produces better output:
     ATLog(@"\n RootViewController: %@ \
             \n Frame: %@ \
@@ -44,8 +44,16 @@
           self.window.alignmentRectInsets,
           self.window.keyWindow);
     
-    // Common structs and primitives are automatically converted to strings:
-    ATLog(@"float: %@; int: %@; unsigned: %@.", 3.14f, 13, 169u);
+    // ATConcatLog may be more readable in some cases:
+    ATConcatLog(@"\n RootViewController: ", self.window.rootViewController,
+                @"\n Frame: ", self.window.frame,
+                @"\n Center: ", self.window.center,
+                @"\n Transform: ", self.window.transform,
+                @"\n Alignment rect insects: ", self.window.alignmentRectInsets,
+                @"\n Is keyWindow: ", self.window.keyWindow);
+    
+    // Common structs, primitives, C-strings are automatically converted to NSStrings:
+    ATConcatLog("float: ", 3.14f, "; int: ", 13, "; unsigned: ", 169u, ".");
     
     // Another macro for easy logging objects, structs and primitives.
     // Each argument is logged in a separate line:
@@ -57,7 +65,7 @@
               self.window.alignmentRectInsets,
               self.window.keyWindow);
     
-    // May be used without arguments
+    // ATLog may be used without arguments:
     ATLog();
     
 }

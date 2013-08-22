@@ -11,6 +11,12 @@
 
 #define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
 
+#define ATConcatLog(items...) \
+{ \
+    NSArray *array = @[ _AT_MAP(_ATString_plus_comma, items) ]; \
+    ATLog(@"%@",[array componentsJoinedByString:@""]); \
+}
+
 #define ATLogEach(items...) \
 { \
     id array[] = { _AT_MAP(_ATString_plus_comma, items) }; \
