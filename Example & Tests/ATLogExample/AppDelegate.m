@@ -47,12 +47,12 @@
           self.window.keyWindow);
     
     // ATConcatLog may be more readable in some cases:
-    ATConcatLog(@"\n RootViewController: ", self.window.rootViewController,
-                @"\n Frame: ", self.window.frame,
-                @"\n Center: ", self.window.center,
-                @"\n Transform: ", self.window.transform,
+    ATConcatLog(@"\n RootViewController: ",     self.window.rootViewController,
+                @"\n Frame: ",                  self.window.frame,
+                @"\n Center: ",                 self.window.center,
+                @"\n Transform: ",              self.window.transform,
                 @"\n Alignment rect insects: ", self.window.alignmentRectInsets,
-                @"\n Is keyWindow: ", self.window.keyWindow);
+                @"\n Is keyWindow: ",           self.window.keyWindow);
     
     // Common structs, primitives, C-strings are automatically converted to NSStrings:
     ATConcatLog("float: ", 3.14f, "; int: ", 13, "; unsigned: ", 169u, ".");
