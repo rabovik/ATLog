@@ -87,6 +87,10 @@ Example for using `NSLog` instead of `ATPrettyLog`:
 ATLog(@"I use NSLog now.");
 ```
 
+
+## CocoaPods
+Add `ATLog` to your _Podfile_.
+
 ## Requirements
 * iOS 5.0+
 * ARC
