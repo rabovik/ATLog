@@ -9,7 +9,11 @@
 #import "ATString.h"
 #import "ATPrettyLog.h"
 
-#define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
+#ifdef ATLog_OUTPUT
+#   define ATLog(fmt...) ATLog_OUTPUT(@"%@",ATStringWithFormat(fmt))
+#else
+#   define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
+#endif
 
 #define ATConcatLog(items...) NSLog(@"%@",ATStringFromComponents(items))
 

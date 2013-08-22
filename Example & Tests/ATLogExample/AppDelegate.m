@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+
+// Uncomment next line to use NSLog instead of ATPrettyLog
+//#define ATLog_OUTPUT(fmt, args...) NSLog(fmt,args)
+
 #import "ATLog.h"
 
 @implementation AppDelegate
