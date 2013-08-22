@@ -55,7 +55,8 @@
                 @"\n Is keyWindow: ",           self.window.keyWindow);
     
     // Common structs, primitives, C-strings are automatically converted to NSStrings:
-    ATConcatLog("float: ", 3.14f, "; int: ", 13, "; unsigned: ", 169u, ".");
+    ATLog(@"float: %@; int:%@; unsigned: %@.", 3.14f, 13, 169u);
+    ATConcatLog(@"π=", 3.14f, @"; Σ=", 13);
     
     // Another macro for easy logging objects, structs and primitives.
     // Each argument is logged in a separate line:
