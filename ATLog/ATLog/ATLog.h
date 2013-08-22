@@ -6,16 +6,12 @@
 //
 //
 
-#import "ATStringWithFormat.h"
+#import "ATString.h"
 #import "ATPrettyLog.h"
 
 #define ATLog(fmt...) ATPrettyLog(@"%@",ATStringWithFormat(fmt))
 
-#define ATConcatLog(items...) \
-{ \
-    NSArray *array = @[ _AT_MAP(_ATString_plus_comma, items) ]; \
-    ATLog(@"%@",[array componentsJoinedByString:@""]); \
-}
+#define ATConcatLog(items...) NSLog(@"%@",ATStringFromComponents(items))
 
 #define ATLogEach(items...) \
 { \

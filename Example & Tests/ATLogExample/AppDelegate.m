@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ATStringWithFormat.h"
 #import "ATLog.h"
-#import "ATPrettyLog.h"
 
 @implementation AppDelegate
 

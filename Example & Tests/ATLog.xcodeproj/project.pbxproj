@@ -53,10 +53,9 @@
 		1A31C7FD17C3BC5900D0BA5F /* ATString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATString.h; path = ../ATLog/ATString/ATString.h; sourceTree = "<group>"; };
 		1A31C7FE17C3BC5900D0BA5F /* ATString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATString.m; path = ../ATLog/ATString/ATString.m; sourceTree = "<group>"; };
 		1A31C80217C3C16300D0BA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		1A31C81817C4D2A500D0BA5F /* ATStringWithFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATStringWithFormat.h; path = ../ATLog/ATStringWithFormat/ATStringWithFormat.h; sourceTree = "<group>"; };
-		1A31C81A17C4D30F00D0BA5F /* at_preprocessor_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = at_preprocessor_map.h; path = ../ATLog/ATStringWithFormat/at_preprocessor_map.h; sourceTree = "<group>"; };
 		1A9425DA17C4DC8200A21012 /* ATLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATLog.h; path = ../ATLog/ATLog/ATLog.h; sourceTree = "<group>"; };
 		1A9425DD17C51CC300A21012 /* ATPrettyLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATPrettyLog.h; path = ../ATLog/ATPrettyLog/ATPrettyLog.h; sourceTree = "<group>"; };
+		1A9425DE17C618B000A21012 /* at_preprocessor_map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = at_preprocessor_map.h; path = ../ATLog/ATString/at_preprocessor_map.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +184,6 @@
 			children = (
 				1A9425DC17C51C9A00A21012 /* ATPrettyLog */,
 				1A9425D917C4DC6700A21012 /* ATLog */,
-				1A31C81917C4D2A900D0BA5F /* ATStringWithFormat */,
 				1A31C7FC17C3BC0E00D0BA5F /* ATString */,
 			);
 			name = ATLog;
@@ -196,17 +194,9 @@
 			children = (
 				1A31C7FD17C3BC5900D0BA5F /* ATString.h */,
 				1A31C7FE17C3BC5900D0BA5F /* ATString.m */,
+				1A9425DE17C618B000A21012 /* at_preprocessor_map.h */,
 			);
 			name = ATString;
-			sourceTree = "<group>";
-		};
-		1A31C81917C4D2A900D0BA5F /* ATStringWithFormat */ = {
-			isa = PBXGroup;
-			children = (
-				1A31C81A17C4D30F00D0BA5F /* at_preprocessor_map.h */,
-				1A31C81817C4D2A500D0BA5F /* ATStringWithFormat.h */,
-			);
-			name = ATStringWithFormat;
 			sourceTree = "<group>";
 		};
 		1A9425D917C4DC6700A21012 /* ATLog */ = {
