@@ -77,14 +77,24 @@ ATLog(@"ATLog uses ATPrettyLog by default.")
 23:14:16.261 -[AppDelegate logExample] [Line 20] ATPrettyLog prints method name and line number.
 23:14:16.261 -[AppDelegate logExample] [Line 21] ATLog uses ATPrettyLog by default.
 ```
-You can change this default behavior by defining a `ATLog_OUTPUT` macro _before_ importing `ATLog.h` file.
-Example for using `NSLog` instead of `ATPrettyLog`:
 
+#### Redirecting ATLog output
+You can change this default behavior by defining a `ATLog_OUTPUT` macro _**before**_ importing `ATLog.h` file. Here are some examples for using `NSLog` or [CocoaLumberjack][CocoaLumberjack] instead of ATPrettyLog:
+
+###### Redirect to NSLog:
 ```objective-c
 #define ATLog_OUTPUT(fmt, args...) NSLog(fmt,args)
 #import "ATLog.h"
 
 ATLog(@"I use NSLog now.");
+```
+
+###### Redirect to CocoaLumberjack:
+```objective-c
+#define ATLog_OUTPUT(fmt, args...) DDLogVerbose(fmt,args)
+#import "ATLog.h"
+
+ATLog(@"I use CocoaLumberjack now.");
 ```
 
 
@@ -103,3 +113,4 @@ MIT License.
 
 [twitter]: https://twitter.com/rabovik
 [tests]: https://github.com/rabovik/ATLog/blob/master/Example%20%26%20Tests/ATLogTests/ATStringTests.m#L20
+[CocoaLumberjack]: https://github.com/robbiehanson/CocoaLumberjack
