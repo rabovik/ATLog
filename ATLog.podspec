@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ATLog"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Log common structures without boring conversions. ATLog(@\"%@\",CGPointMake(1,1)); // No need for NSStringFromCGPoint."
   s.homepage     = "https://github.com/rabovik/ATLog"
   s.license      = 'MIT'
