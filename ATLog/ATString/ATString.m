@@ -89,6 +89,34 @@ static NSString *typeMatch(NSString *type, NSString *pattern){
         return NSStringFromUIOffset(*(UIOffset *)valueRef);
     }
     
+    // BOOL
+    if (strcmp(@encode(BOOL), type) == 0){
+        if (strcmp(@encode(BOOL), @encode(signed char)) == 0){
+            // 32 bit
+            char ch = *(signed char *)valueRef;
+            if ((char)YES == ch) return @"YES";
+            if ((char)NO == ch) return @"NO";
+        }else if (strcmp(@encode(BOOL), @encode(bool)) == 0){
+            // 64 bit
+            bool boolValue = *(bool *)valueRef;
+            if (boolValue) {
+                return @"YES";
+            }else{
+                return @"NO";
+            }
+        }
+    }
+    
+    if (strcmp(@encode(bool), type) == 0){
+        // 32 bit
+        bool boolValue = *(bool *)valueRef;
+        if (boolValue) {
+            return @"true";
+        }else{
+            return @"false";
+        }
+    }
+    
     // Primitives
     if (strcmp(@encode(void *), type) == 0){
         void *pointer = *(void **)valueRef;
@@ -120,10 +148,8 @@ static NSString *typeMatch(NSString *type, NSString *pattern){
         return [NSString stringWithFormat:@"%lld",*(long long *)valueRef];
     }
     
-    if (strcmp(@encode(char), type) == 0){
+    if (strcmp(@encode(signed char), type) == 0){
         char ch = *(char *)valueRef;
-        if ((char)YES == ch) return @"YES";
-        if ((char)NO == ch) return @"NO";
         return [NSString stringWithFormat:@"%c",ch];
     }
     
@@ -149,15 +175,6 @@ static NSString *typeMatch(NSString *type, NSString *pattern){
     
     if (strcmp(@encode(unsigned long long), type) == 0){
         return [NSString stringWithFormat:@"%llu",*(unsigned long long *)valueRef];
-    }
-    
-    if (strcmp(@encode(bool), type) == 0){
-        bool boolValue = *(bool *)valueRef;
-        if (boolValue) {
-            return @"true";
-        }else{
-            return @"false";
-        }
     }
     
     NSString *typeString = [NSString stringWithUTF8String:type];

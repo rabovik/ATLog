@@ -80,9 +80,17 @@
     AssertEquals(ATString((unsigned long)ULONG_MAX), SF(@"%lu",ULONG_MAX));
     AssertEquals(ATString((unsigned long long)ULLONG_MAX), SF(@"%llu",ULLONG_MAX));
     
+#if !defined(OBJC_HIDE_64) && TARGET_OS_IPHONE && __LP64__
+    // 64 bit
+    AssertEquals(ATString((bool)true), @"YES");
+    AssertEquals(ATString((bool)false), @"NO");
+    AssertEquals(ATString((bool)2), @"YES");
+#else
+    // 32 bit
     AssertEquals(ATString((bool)true), @"true");
     AssertEquals(ATString((bool)false), @"false");
     AssertEquals(ATString((bool)2), @"true");
+#endif
     
     AssertEquals(ATString(NULL), @"(NULL)");
 }
